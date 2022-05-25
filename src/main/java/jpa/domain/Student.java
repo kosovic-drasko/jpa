@@ -6,8 +6,9 @@ import javax.persistence.*;
 /**
  * A Student.
  */
-@Entity
 @Table(name = "student")
+@Entity
+@NamedNativeQuery(name = "Student.findByName", query = "select * from Student where name = ?1", resultClass = Student.class)
 public class Student implements Serializable {
 
     private static final long serialVersionUID = 1L;
