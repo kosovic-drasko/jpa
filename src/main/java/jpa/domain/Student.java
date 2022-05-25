@@ -8,7 +8,7 @@ import javax.persistence.*;
  */
 @Table(name = "student")
 @Entity
-@NamedNativeQuery(name = "Student.findByName", query = "select * from Student where name = ?1", resultClass = Student.class)
+@NamedNativeQuery(name = "Student.getName", query = "select student.id,student.name from student", resultClass = Student.class)
 public class Student implements Serializable {
 
     private static final long serialVersionUID = 1L;
