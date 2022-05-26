@@ -18,7 +18,8 @@
         "title": "Student"
       },
       "id": "ID",
-      "name": "Name"
+      "name": "Name",
+      "predmeti": "Predmeti"
     }
   }
 }

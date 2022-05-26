@@ -143,7 +143,7 @@ public class StudentResource {
     @GetMapping("/students")
     public List<Student> getAllStudents() {
         log.debug("REST request to get all Students");
-        return studentRepository.getName();
+        return studentRepository.findAll();
     }
 
     /**

@@ -9,6 +9,13 @@
   "name": "Student",
   "pagination": "no",
   "readOnly": false,
-  "relationships": [],
+  "relationships": [
+    {
+      "otherEntityName": "predmeti",
+      "otherEntityRelationshipName": "student",
+      "relationshipName": "predmeti",
+      "relationshipType": "one-to-many"
+    }
+  ],
   "service": "no"
 }

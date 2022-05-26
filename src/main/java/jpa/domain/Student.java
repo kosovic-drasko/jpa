@@ -1,14 +1,16 @@
 package jpa.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import java.io.Serializable;
+import java.util.HashSet;
+import java.util.Set;
 import javax.persistence.*;
 
 /**
  * A Student.
  */
-@Table(name = "student")
 @Entity
-@NamedNativeQuery(name = "Student.getName", query = "select student.id,student.name from student", resultClass = Student.class)
+@Table(name = "student")
 public class Student implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -21,6 +23,10 @@ public class Student implements Serializable {
 
     @Column(name = "name")
     private String name;
+
+    @OneToMany(mappedBy = "student")
+    @JsonIgnoreProperties(value = { "student" }, allowSetters = true)
+    private Set<Predmeti> predmetis = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
 
@@ -48,6 +54,37 @@ public class Student implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Set<Predmeti> getPredmetis() {
+        return this.predmetis;
+    }
+
+    public void setPredmetis(Set<Predmeti> predmetis) {
+        if (this.predmetis != null) {
+            this.predmetis.forEach(i -> i.setStudent(null));
+        }
+        if (predmetis != null) {
+            predmetis.forEach(i -> i.setStudent(this));
+        }
+        this.predmetis = predmetis;
+    }
+
+    public Student predmetis(Set<Predmeti> predmetis) {
+        this.setPredmetis(predmetis);
+        return this;
+    }
+
+    public Student addPredmeti(Predmeti predmeti) {
+        this.predmetis.add(predmeti);
+        predmeti.setStudent(this);
+        return this;
+    }
+
+    public Student removePredmeti(Predmeti predmeti) {
+        this.predmetis.remove(predmeti);
+        predmeti.setStudent(null);
+        return this;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
