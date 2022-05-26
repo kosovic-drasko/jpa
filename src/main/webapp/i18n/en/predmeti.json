@@ -1,0 +1,26 @@
+{
+  "jpaApp": {
+    "predmeti": {
+      "home": {
+        "title": "Predmetis",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Predmeti",
+        "createOrEditLabel": "Create or edit a Predmeti",
+        "notFound": "No Predmetis found"
+      },
+      "created": "A new Predmeti is created with identifier {{ param }}",
+      "updated": "A Predmeti is updated with identifier {{ param }}",
+      "deleted": "A Predmeti is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Predmeti {{ id }}?"
+      },
+      "detail": {
+        "title": "Predmeti"
+      },
+      "id": "ID",
+      "nazivPredmeta": "Naziv Predmeta",
+      "brojSemestara": "Broj Semestara",
+      "student": "Student"
+    }
+  }
+}

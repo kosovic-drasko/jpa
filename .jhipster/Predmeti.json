@@ -1,0 +1,25 @@
+{
+  "changelogDate": "20220526144022",
+  "fields": [
+    {
+      "fieldName": "nazivPredmeta",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "brojSemestara",
+      "fieldType": "Integer"
+    }
+  ],
+  "name": "Predmeti",
+  "pagination": "no",
+  "readOnly": false,
+  "relationships": [
+    {
+      "otherEntityName": "student",
+      "otherEntityRelationshipName": "predmeti",
+      "relationshipName": "student",
+      "relationshipType": "many-to-one"
+    }
+  ],
+  "service": "no"
+}
