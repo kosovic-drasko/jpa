@@ -12,7 +12,8 @@ import javax.persistence.*;
 @NamedNativeQuery(
     name = "Predmeti.getPredmeti",
     query = "select predmeti.id,predmeti.naziv_predmeta," +
-    "predmeti.broj_semestara,predmeti.student_id,predmeti.broj_semestara*10 as ukupno_semestara from predmeti",
+    "predmeti.broj_semestara,predmeti.student_id,predmeti.broj_semestara*10" +
+    " as ukupno_semestara from predmeti",
     resultClass = Predmeti.class
 )
 public class Predmeti implements Serializable {
