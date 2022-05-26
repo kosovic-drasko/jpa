@@ -146,9 +146,9 @@ public class PredmetiResource {
      * @return the {@link ResponseEntity} with status {@code 200 (OK)} and the list of predmetis in body.
      */
     @GetMapping("/predmetis")
-    public List<Predmeti> getAllPredmetis() {
+    public List<?> getAllPredmetis() {
         log.debug("REST request to get all Predmetis");
-        return predmetiRepository.findAll();
+        return predmetiRepository.getPredmeti();
     }
 
     /**

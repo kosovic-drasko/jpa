@@ -9,6 +9,12 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name = "predmeti")
+@NamedNativeQuery(
+    name = "Predmeti.getPredmeti",
+    query = "select predmeti.id,predmeti.naziv_predmeta," +
+    "predmeti.broj_semestara,predmeti.student_id,predmeti.broj_semestara*10 as ukupno_semestara from predmeti",
+    resultClass = Predmeti.class
+)
 public class Predmeti implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -25,11 +31,18 @@ public class Predmeti implements Serializable {
     @Column(name = "broj_semestara")
     private Integer brojSemestara;
 
+    @Column(name = "ukupno_semestara")
+    private Integer ukupnoSemestara;
+
     @ManyToOne
     @JsonIgnoreProperties(value = { "predmetis" }, allowSetters = true)
     private Student student;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
+
+    public Integer getUkupnoSemestara() {
+        return ukupnoSemestara;
+    }
 
     public Long getId() {
         return this.id;

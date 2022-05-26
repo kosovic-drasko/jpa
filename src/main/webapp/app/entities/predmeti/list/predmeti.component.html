@@ -36,6 +36,7 @@
           <th scope="col"><span jhiTranslate="jpaApp.predmeti.nazivPredmeta">Naziv Predmeta</span></th>
           <th scope="col"><span jhiTranslate="jpaApp.predmeti.brojSemestara">Broj Semestara</span></th>
           <th scope="col"><span jhiTranslate="jpaApp.predmeti.student">Student</span></th>
+          <th scope="col"><span>Ukupno Semestara</span></th>
           <th scope="col"></th>
         </tr>
       </thead>
@@ -51,6 +52,7 @@
               <a [routerLink]="['/student', predmeti.student?.id, 'view']">{{ predmeti.student?.id }}</a>
             </div>
           </td>
+          <td>{{ predmeti.ukupnoSemestara }}</td>
           <td class="text-end">
             <div class="btn-group">
               <button

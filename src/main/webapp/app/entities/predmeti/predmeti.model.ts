@@ -5,6 +5,7 @@ export interface IPredmeti {
   nazivPredmeta?: string | null;
   brojSemestara?: number | null;
   student?: IStudent | null;
+  ukupnoSemestara?: number | null;
 }
 
 export class Predmeti implements IPredmeti {
@@ -12,7 +13,8 @@ export class Predmeti implements IPredmeti {
     public id?: number,
     public nazivPredmeta?: string | null,
     public brojSemestara?: number | null,
-    public student?: IStudent | null
+    public student?: IStudent | null,
+    public number?: null
   ) {}
 }
 
